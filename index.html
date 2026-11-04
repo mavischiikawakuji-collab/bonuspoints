@@ -26,7 +26,7 @@ h1{font-family:"Cinzel","Space Grotesk",serif;letter-spacing:0.04em;background:l
 .search-wrap svg{position:absolute;left:12px;top:50%;transform:translateY(-50%);opacity:0.3}
 .cats{display:flex;gap:8px;overflow-x:auto;padding-bottom:4px;scrollbar-width:none}
 .cats::-webkit-scrollbar{display:none}
-.cat{white-space:nowrap;height:32px;padding:0 16px;border-radius:9999px;border:1px solid rgba(255,255,255,0.08);background:#1a1a1a;color:rgba(255,255,255,0.6);font-size:13px;cursor:pointer}
+.cat{white-space:nowrap;height:32px;min-height:32px;max-height:32px;padding:0 16px;border-radius:9999px;border:1px solid rgba(255,255,255,0.08);background:#1a1a1a;color:rgba(255,255,255,0.6);font-size:13px;cursor:pointer;box-sizing:border-box;line-height:32px;display:inline-flex;align-items:center;justify-content:center;flex-shrink:0;transform:translateY(0)}
 .cat.active{background:linear-gradient(135deg,#d4af37,#f6e27a);color:#000;border-color:#d4af37}
 .card{background:linear-gradient(180deg,rgba(255,255,255,0.06),rgba(255,255,255,0.02)),#121212;border:1px solid rgba(212,175,55,0.18);border-radius:20px;padding:16px;margin-bottom:12px;position:relative;overflow:hidden}
 .card::before{content:"";position:absolute;inset:0;background:linear-gradient(110deg,transparent 20%,rgba(246,226,122,0.06) 50%,transparent 80%);background-size:200% 100%;animation:shimmer 8s ease-in-out infinite;pointer-events:none}
@@ -84,7 +84,7 @@ body{ background:#08080a !important; }
   <div class="search">
     <div class="search-wrap"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="11" cy="11" r="6"/><path d="M21 21l-3.5-3.5"/></svg><input id="searchInput" placeholder="搜尋卡片、獎賞..."></div>
   </div>
-  <div style="display:flex;gap:8px;align-items:center;margin-bottom:12px"><div class="cats" id="catFilter" style="flex:1"></div><select id="sortSelect" style="height:32px;border-radius:9999px;background:#1a1a1a;border:1px solid rgba(255,255,255,0.08);color:rgba(255,255,255,0.6);font-size:12px;padding:0 8px"><option value="default">預設</option><option value="valueDesc">💰 價值高→低</option><option value="valueAsc">💰 價值低→高</option><option value="pointsDesc">⭐ 積分高→低</option><option value="expiryAsc">⏰ 快到期先</option></select></div>
+  <div style="display:flex;gap:8px;align-items:center;margin-bottom:12px;min-width:0"><div class="cats" id="catFilter" style="flex:1;min-width:0"></div><select id="sortSelect" style="height:32px;min-height:32px;max-height:32px;border-radius:12px;background:#1a1a1a;border:1px solid rgba(212,175,55,0.18);color:rgba(255,255,255,0.7);font-size:13px;padding:0 12px 0 12px;flex-shrink:0;align-self:center;box-sizing:border-box;-webkit-appearance:none;appearance:none;line-height:1;display:flex;align-items:center"><option value="default">預設</option><option value="valueDesc">💰 價值高→低</option><option value="valueAsc">💰 價值低→高</option><option value="pointsDesc">⭐ 積分高→低</option><option value="expiryAsc">⏰ 快到期先</option></select></div>
   <div id="cardList"></div>
   <div class="empty" id="empty" style="display:none"><div style="font-size:24px;margin-bottom:8px">🪪</div><div style="font-weight:600">未有積分卡</div><div style="font-size:13px;color:rgba(255,255,255,0.4);margin-top:6px">新增你的第一張積分卡</div></div>
 </div>
